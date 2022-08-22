@@ -1,4 +1,4 @@
-package com.atsistemas.test.pruebabacktest4;
+package com.sanitas.test.calculator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
