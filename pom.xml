@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.sanitas.test</groupId>
     <artifactId>calculator-test</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-RELEASE</version>
     <name>calculator-test</name>
     <description>Calculator Prueba Back Test4</description>
     <properties>
