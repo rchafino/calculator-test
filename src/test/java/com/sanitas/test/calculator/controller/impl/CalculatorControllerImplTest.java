@@ -1,6 +1,6 @@
 package com.sanitas.test.calculator.controller.impl;
 
-import com.sanitas.test.calculator.PruebaBackTest4Application;
+import com.sanitas.test.calculator.CalculatorTestApplication;
 import com.sanitas.test.calculator.config.RestProperties;
 import com.sanitas.test.calculator.dto.OperationRequest;
 import com.sanitas.test.calculator.dto.OperationResponse;
@@ -18,7 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 
-@SpringBootTest(classes ={PruebaBackTest4Application.class},webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes ={CalculatorTestApplication.class},webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CalculatorControllerImplTest {
 
     @Autowired
@@ -36,7 +36,7 @@ public class CalculatorControllerImplTest {
         URI uri = new URI(baseUrl.concat("/calculation"));
 
         OperationRequest operationRequest = OperationRequest.builder()
-                .operator(OperatorEnum.ADD)
+                .operator(OperatorEnum.ADD.toString())
                 .numbers(Arrays.asList(10.0,5.0,20.0))
                 .build();
 

@@ -8,26 +8,25 @@ import com.sanitas.test.calculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
-@RequestMapping(value= RestProperties.BASE_PATH , produces=RestProperties.DATA_TYPE)
+@RequestMapping(value = RestProperties.BASE_PATH, produces = RestProperties.DATA_TYPE)
 public class CalculatorControllerImpl implements CalculatorController {
 
     private CalculatorService calculatorService;
 
     @Autowired
-    public CalculatorControllerImpl(CalculatorService calculatorService){
+    public CalculatorControllerImpl(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
 
     @Override
-    @PostMapping(path = "/calculation")
-    public ResponseEntity<OperationResponse> operate(OperationRequest operationRequest) {
-        return new ResponseEntity<>(calculatorService.operateRequest(operationRequest), HttpStatus.ACCEPTED);
+    public ResponseEntity<OperationResponse> operate(@Valid OperationRequest operationRequest) {
+        return new ResponseEntity<>(calculatorService.operateRequest(operationRequest), HttpStatus.OK);
     }
 
 }

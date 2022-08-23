@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.sanitas.test.calculator")
-public class PruebaBackTest4Application {
+public class CalculatorTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PruebaBackTest4Application.class, args);
+		SpringApplication.run(CalculatorTestApplication.class, args);
 	}
 
 }
